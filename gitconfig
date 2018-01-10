@@ -1,0 +1,30 @@
+[color]
+	ui = auto
+[user]
+	name = Pieter Kuijpers
+	email = pieter@pi-q.nl
+[github]
+	user = pkuijpers
+	token = bc1fec195494ebe56117c52a14d02732
+[merge]
+	tool = opendiff
+[core]
+	editor = /usr/bin/vim
+	excludesfile = /Users/pieter/.gitignore_global
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = matching
+
+[http]
+[https]
