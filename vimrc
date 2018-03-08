@@ -1,20 +1,14 @@
 "" Manage VIM runtimepath
 execute pathogen#infect()
 
-set nocompatible
-filetype plugin on
+"" Syntax highlighting and indentation
+syntax on
+filetype plugin indent on
 
 "" Color and font settings
 set background=dark
 colorscheme solarized
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
-
-"" Use two spaces for indentation and smart indent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set cindent
 
 "" Show line numbers
 set number
