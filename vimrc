@@ -6,9 +6,10 @@ syntax on
 filetype plugin indent on
 
 "" Color and font settings
+if has('gui_running')
+	colorscheme solarized
+endif
 set background=dark
-colorscheme solarized
-set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
 
 "" Show line numbers
 set number
@@ -32,7 +33,15 @@ runtime macros/matchit.vim
 
 "" Powerline symbols
 let g:airline_powerline_fonts = 1
+if has('gui_running')
+	let g:airline_theme='solarized'
+endif
 
 "" Sunset plugin
-let g:sunset_latitude = 51.9
-let g:sunset_longitude = 5.90
+if has('gui_running')
+	let g:sunset_latitude = 51.9
+	let g:sunset_longitude = 5.90
+else
+	"" Disable sunset plugin when not in GUI
+	let g:loaded_sunset = 1
+endif
