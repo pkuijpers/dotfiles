@@ -1,6 +1,19 @@
 "" Manage VIM runtimepath
 execute pathogen#infect()
 
+"" Manage plugins with vim-plug (https://github.com/junegunn/vim-plug)
+call plug#begin()
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-scripts/Sunset'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
 "" Syntax highlighting and indentation
 syntax on
 filetype plugin indent on
