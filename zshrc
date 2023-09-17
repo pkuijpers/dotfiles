@@ -8,7 +8,7 @@ export ZSH=~/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="random"
+ZSH_THEME="muse"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -64,6 +64,11 @@ plugins=(
   lein
   mvn
   aws
+  terraform
+  kubectl
+  docker
+  z
+  alias-tips
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,8 +101,37 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ccat='pygmentize -g'
+
+
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/pieter/.sdkman"
+[[ -s "/home/pieter/.sdkman/bin/sdkman-init.sh" ]] && source "/home/pieter/.sdkman/bin/sdkman-init.sh"
+
+# Created by `userpath` on 2020-05-27 18:41:34
+export PATH="$PATH:/home/pieter/.local/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
